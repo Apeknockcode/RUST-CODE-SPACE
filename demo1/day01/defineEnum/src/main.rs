@@ -1,3 +1,4 @@
+
 // // 定义地址类型
 // #[derive(Debug)]
 // enum IpAddrKind {
@@ -91,6 +92,7 @@ impl Message{
         println!("Message : {:?}", self);
     }
 }
+
 #[derive(Debug)]
 enum Option<T>{
     Some(T),
@@ -142,10 +144,11 @@ fn main() {
      let some_string = Option::Some("a string");
 
     //  如果使用 None 而不是 Some，需要告诉 Rust Option<T> 是什么类型的
-    //  let absent_number: Option<i32> = None;
+     let absent_number: Option<i32> = Option::None;
 
 
     let x: i8 = 5;
+    
     let y: Option<i8> = Option::Some(5);
     // let sum = x + y; //错误信息意味着 Rust 不知道该如何将 Option<i8> 与 i8 相加，因为它们的类型不同。
 
