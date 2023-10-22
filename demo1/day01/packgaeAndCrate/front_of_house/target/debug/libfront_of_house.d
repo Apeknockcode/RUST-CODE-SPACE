@@ -1,0 +1,1 @@
+/Users/taotao/Documents/自学项目/RUST-CODE-SPACE/demo1/day01/packgaeAndCrate/front_of_house/target/debug/libfront_of_house.rlib: /Users/taotao/Documents/自学项目/RUST-CODE-SPACE/demo1/day01/packgaeAndCrate/front_of_house/src/lib.rs
