@@ -1,5 +1,7 @@
+// use std::io::ErrorKind;
 use std::fs::File;
-use std::io::ErrorKind;
+use std::io;
+use std::io::Read;
 fn main() {
     //    panic! 与 不可恢复的错误
 
@@ -61,11 +63,11 @@ fn main() {
      * Result<T, E> 类型定义了很多辅助方法来处理各种情况。其中之一叫做 unwrap.
      * 如果 Result 值是成员 Ok，unwrap 会返回 Ok 中的值。
      * 如果 Result 是成员 Err，unwrap 会为我们调用 panic!
-     * 
+     *
      * expect 与 unwrap 的使用方式一样:返回文件句柄或调用 panic! 宏.
      * expect 在调用 panic! 时使用的错误信息将是我们传递给 expect 的参数，
      * 而不像 unwrap 那样使用默认的 panic! 信息
-     * 
+     *
      * **/
 
     // let f_1 = File::open("text.txt").unwrap();
@@ -73,20 +75,35 @@ fn main() {
     //  TODO:使用 expect 而不是 unwrap 并提供一个好的错误信息可以表明你的意图并更易于追踪 panic 的根源。
     let f_1 = File::open("text.txt").expect("打开文件失败");
 
-
-
     /*
-    * 传播错误
-    * 在这个函数中处理错误外，还可以选择让调用者知道这个错误并决定该如何处理。这被称为 传播（propagating）错误
-    */ 
+     * 传播错误
+     * 在这个函数中处理错误外，还可以选择让调用者知道这个错误并决定该如何处理。这被称为 传播（propagating）错误
+     */
 }
 
-enum Result<T, E> {
-    Ok(T),
-    Err(E),
-}
+// enum Result<T, E> {
+//     Ok(T),
+//     Err(E),
+// }
 /*
  * T 和 E 是泛型类型参数:
  * T 代表成功时返回的 Ok 成员中的数据的类型
  * E 代表失败时返回的 Err 成员中的错误的类型。
  * **/
+
+/*
+* 这意味着函数返回一个 Result<T, E> 类型的值,
+* 其中泛型参数 T 的具体类型是 String，而 E 的具体类型是 io::Error。
+**/
+fn read_username_from_file() -> Result<String, io::Error> {
+    let f = File::open("Hello.txt");
+    let mut f = match f {
+        Ok(file) => file,
+        Err(e) => return Err(e),
+    };
+    let mut s = String::new();
+    match f.read_to_string(&mut s) {
+        Ok(_) => Ok(s),
+        Err(e) => Err(e),
+    }
+}

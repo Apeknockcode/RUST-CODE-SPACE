@@ -1,0 +1,1 @@
+/Users/taotao/Documents/自学项目/RUST-CODE-SPACE/day02/traitShareBehavior/target/debug/traitShareBehavior: /Users/taotao/Documents/自学项目/RUST-CODE-SPACE/day02/traitShareBehavior/src/lib.rs /Users/taotao/Documents/自学项目/RUST-CODE-SPACE/day02/traitShareBehavior/src/main.rs
