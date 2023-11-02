@@ -168,6 +168,7 @@ fn first_word<'a>(s: &'a str) -> &'a str {
 //  TODO : 方法定义中的生命周期标注
 //  TODO : 静态生命周期
 // 这里有一种特殊的生命周期值得讨论：'static，其生命周期能够存活于整个程序期间。
+
 // let s: &'static str = "I have a static lifetime.";
 
 //  TODO : 结合泛型类型参数、trait bounds 和生命周期
