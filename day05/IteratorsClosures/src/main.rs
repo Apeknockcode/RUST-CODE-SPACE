@@ -1,6 +1,8 @@
 use std::thread;
 use std::time::Duration;
 
+use std::collections::HashMap;
+
 fn main1() {
     // TODO : 闭包 : 可以捕获环境的匿名函数
     /*
@@ -237,4 +239,24 @@ fn main() {
      * 可以通过在 vector 上调用 iter、into_iter 或 iter_mut 来创建一个迭代器
      *  
      * */ 
+
+
+    //  let test  = "Hello world";
+    //  let mut map = HashMap::new();
+    //  for word  in test.split_whitespace() {
+    //     let count = map.entry(word).or_insert(0);
+    //     *count += 1;
+    //  }
+    //  println!("{:#?}",map)
+
+    // let v = vec![1,2,3,4,5];
+    // v[222];
+
+
+    //  TODO : Result 枚举
+
+    
+
 }
+
+
