@@ -87,5 +87,50 @@ fn main() {
 
     //  TODO : 测试私有函数
 
+    // TODO : 集成测试
+    /*
+     * 在Rust 里.集成测试完全位于被测试库的外部
+     * 目的: 是测试被测试库的多个部分是否能正常的一起工作
+     * 集成测试的覆盖率很重要
+     * */ 
+
+    //  TODO : Tests 目录
+    /* 
+     * 命令行: cargo new adder --lib 创建测试项目
+     * 
+     * 创建集成测试: tests目录 
+     * tests 目录下的每个测试文件都是单独的一个crate
+     * 无需标注#[cfg(test)] , tests 目录被特殊对待
+     *   - 只有cargo test,才会编译tests目录下的文件
+     * 
+     * */ 
+
+
+    //  TODO : 运行指定的集成测试
+    /*
+     *  运行一个特定的集成测试 : cargo test 函数名
+     *  运行某个测试文件内的所有测试 : cargo test --test 文件名
+     * 
+     * */ 
+
+
+    //  TODO : 集成测试中的子模块(子文件)
+    /*
+     * tests 目录下每个文件被编译称单独的crate
+     *  - 这些文件不共享行为(与src下的文件规则不同)
+     * */ 
+
+
+    //  TODO : 针对binary crate 的集成测试
+    /*
+     * 如果项目是 binary crate ,只含有src/main.rs 没有src/lib.rs
+     *  - 不能在tests 目录下创建集成测试
+     *  - 无法把main.rs的函数导入作用域
+     * 只有 library crate 才能暴露函数给其他crate 用 
+     * binary crate 意味着独立运行
+     * 
+     * 
+     * */ 
+
 
 }
