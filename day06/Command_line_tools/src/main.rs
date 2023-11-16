@@ -16,9 +16,9 @@ fn main() {
      * */
 
     // TODO : 读取命令行的参数
-    let args: Vec<String> = env::args().collect();
+    // let args: Vec<String> = env::args().collect();
     // TODO : 打印参数值
-    println!("{:?}", args);
+    // println!("{:?}", args);
     /*
      * 执行 cargo run 输出: // ["target/debug/Command_line_tools"]
      * 执行 cargo run 123 Abcsd 输出 ["target/debug/Command_line_tools", "123", "Abcsd"]
@@ -32,7 +32,7 @@ fn main() {
     // let filename = &args[2];
     // println!("获取用户输入的一个参数: {}", query);
     // println!("获取用户输入的二个参数: {}", filename);
-    let config = Config::new(&args).unwrap_or_else(|err| {
+    let config = Config::new(env::args()).unwrap_or_else(|err| {
         eprintln!("Problem parsing arguments: {}", err);
         process::exit(1);
     });

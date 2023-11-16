@@ -1,4 +1,3 @@
-["target/debug/Command_line_tools", "and", "poem.txt"]
 读取的文件 : 
  FIT和Cucumber都是命令行工具。
 
@@ -7,4 +6,4 @@ Both FIT and Cucumber are command line tools.
 为命令行工具创建GUI是最佳起点之一！
 
 Creating GUIs for commAnd line tools is one of the best ways of getting started!
-查找的数据: Both FIT and Cucumber are command line tools. 
+查找的数据: 为命令行工具创建GUI是最佳起点之一！
