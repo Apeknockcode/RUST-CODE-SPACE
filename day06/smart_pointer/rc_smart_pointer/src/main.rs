@@ -62,15 +62,13 @@
 //     println!("count after creating  scope= {}", Rc::strong_count(&a));
 // }
 
-
 /*
  * Rc::clone()  vs 类型的clone() 方法
  *   - Rc::clone() : 增加引用计数,不会执行数据的深度拷贝操作
  *   - 类型的 clone() : 很多会执行数据的深度拷贝操作
  * Rc<T> : 通常不可变引用,使你可以在程序不同部分之间共享只读数据
- * 
- * */ 
-
+ *
+ * */
 
 //  TODO : 内部可变性
 /*
@@ -80,38 +78,78 @@
  * RefCell<T> 与Rc<T> 不同,RefCell<T> 类型代表了其持有数据的唯一所有权
  * 回忆一下借用规则:
  *   -在任何给定的时间里,你要么只能拥有一个可变引用,要么只能拥有任意数据的不可变引用.引用总数有效的.
- * 
+ *
  * TODO :  RefCell<T> 与 Box<T> 的区别
  *    Box<T>                            RefCell<T>
  *     - 编译阶段强制代码遵守借用规则          - 只会在运行时检查借用规则
  *     - 否则出现错误                       - 否则会出发panic!
- * 
+ *
  * TODO : 借用规则 :在不同阶段进行检查的比较
  * 编译阶段                         运行时
  *  - 尽早暴露问题                    - 问题暴露延后,甚至到生产环境
  *  - 没有任何运行时开销               - 因借用计数产生些许性损失
- *  - 对大多数场景是最佳选择            - 实现某些特定的内存安全场景(不可变环境中修改自身数据) 
+ *  - 对大多数场景是最佳选择            - 实现某些特定的内存安全场景(不可变环境中修改自身数据)
  *  - 是Rust 的默认行为
- * 
+ *
  * ReCell<T> 与 Rc<T> 相似,只能用于单线程场景
- * 
+ *
  * 选择Box<T> Rc<T> RefCell<T>的依据
  *                    Box<T>                 Rc<T>               RefCell<T>
  * 同一数据的所有者     一个                     多个                 一个
- * 可变性,借用检查   可变,不可变借用(编译时检查) 不可变借用(编译时检查)   可变,不可变借用(运行时检查) 
- * 
+ * 可变性,借用检查   可变,不可变借用(编译时检查) 不可变借用(编译时检查)   可变,不可变借用(运行时检查)
+ *
  * 其中: 即便RefCell<T> 本身不可变,但仍能修改其中存储的值
- * 
+ *
  * 内部可变性: 可变的借用一个不可变的值.
- * 
- * 
- * */ 
+ *
+ *
+ * */
 
-fn main(){
-    let x = 5;
-    // 推论: 无法可变的借用一个不可变的值
-    //  y 借用了 一个无法可变的x 的值
-    // let y = &mut x; // 报错
+// fn main(){
+//     let x = 5;
+//     // 推论: 无法可变的借用一个不可变的值
+//     //  y 借用了 一个无法可变的x 的值
+//     // let y = &mut x; // 报错
+// }
+
+// TODO : 使用 RefCell<T> 在运行时记录借用信息
+/*
+ *  RefCell<T> 会记录当前存在多少个活跃的Ref<T> 和 RefMut<T> 智能指针:
+ *   - 每次调用borrow: 不可变借用计数加1
+ *   - 任何一个Ref<T> 的值离开作用域被释放时: 不可变借用计数减 1
+ *   - 每次调用borrow_mut: 可变借用计数加 1
+ *   - 任何一个RefMut<T> 的值离开作用域被释放时: 可变借用计数减 1
+ *
+ * 以此技术来维护借用检查规则:
+ *   - 任何一个给定时间里.只允许拥有多个不可借用 或 一个可变借用
+ * */
+
+//  TODO : 将Rc<T> 和 RefCell<T> 结合使用来实现一个拥有多重所有权的可变数据
+#[derive(Debug)]
+enum List {
+    Cons(Rc<RefCell<i32>>, Rc<List>),
+    Nil,
+}
+use crate::List::{Cons, Nil};
+use std::cell::RefCell;
+use std::rc::Rc;
+
+fn main() {
+    let value = Rc::new(RefCell::new(5));
+    let a = Rc::new(Cons(Rc::clone(&value), Rc::new(Nil)));
+    let b = Cons(Rc::new(RefCell::new(6)), Rc::clone(&a));
+    let c = Cons(Rc::new(RefCell::new(10)), Rc::clone(&a));
+
+    *value.borrow_mut() += 10;
+
+    println!("a after = {:?}",a);
+    println!("a after = {:?}",b);
+    println!("a after = {:?}",c);
 }
 
 
+// TODO : 其他可实现内部可变的类型
+/*
+ * - Cell<T> : 通过复制来访问数据
+ * - Mutex<T> : 用于实现跨线程情形下的内部可变性模式 
+ * */ 
