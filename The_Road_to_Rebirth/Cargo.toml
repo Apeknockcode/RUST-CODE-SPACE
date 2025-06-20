@@ -1,0 +1,9 @@
+[package]
+name = "The_Road_to_Rebirth"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+serde = "1.0.219"
+serde_json = "1.0.140"
+serde_yaml = "0.9.33"

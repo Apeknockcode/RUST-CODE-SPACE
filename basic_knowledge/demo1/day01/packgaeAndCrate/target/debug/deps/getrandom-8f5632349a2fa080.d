@@ -1,0 +1,11 @@
+/Users/taotao/Documents/自学项目/RUST-CODE-SPACE/basic_knowledge/demo1/day01/packgaeAndCrate/target/debug/deps/libgetrandom-8f5632349a2fa080.rmeta: /Users/taotao/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.2.10/src/lib.rs /Users/taotao/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.2.10/src/error.rs /Users/taotao/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.2.10/src/util.rs /Users/taotao/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.2.10/src/error_impls.rs /Users/taotao/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.2.10/src/util_libc.rs /Users/taotao/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.2.10/src/use_file.rs /Users/taotao/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.2.10/src/macos.rs
+
+/Users/taotao/Documents/自学项目/RUST-CODE-SPACE/basic_knowledge/demo1/day01/packgaeAndCrate/target/debug/deps/getrandom-8f5632349a2fa080.d: /Users/taotao/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.2.10/src/lib.rs /Users/taotao/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.2.10/src/error.rs /Users/taotao/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.2.10/src/util.rs /Users/taotao/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.2.10/src/error_impls.rs /Users/taotao/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.2.10/src/util_libc.rs /Users/taotao/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.2.10/src/use_file.rs /Users/taotao/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.2.10/src/macos.rs
+
+/Users/taotao/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.2.10/src/lib.rs:
+/Users/taotao/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.2.10/src/error.rs:
+/Users/taotao/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.2.10/src/util.rs:
+/Users/taotao/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.2.10/src/error_impls.rs:
+/Users/taotao/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.2.10/src/util_libc.rs:
+/Users/taotao/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.2.10/src/use_file.rs:
+/Users/taotao/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/getrandom-0.2.10/src/macos.rs:
