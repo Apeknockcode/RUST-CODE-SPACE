@@ -5,9 +5,11 @@
       <sourceFolder url="file://$MODULE_DIR$/async_await/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/rust_macro/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/train_thread/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/rust_calculator/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/async_await/target" />
       <excludeFolder url="file://$MODULE_DIR$/rust_macro/target" />
       <excludeFolder url="file://$MODULE_DIR$/train_thread/target" />
+      <excludeFolder url="file://$MODULE_DIR$/rust_calculator/target" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
