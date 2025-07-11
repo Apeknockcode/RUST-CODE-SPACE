@@ -6,10 +6,12 @@
       <sourceFolder url="file://$MODULE_DIR$/rust_macro/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/train_thread/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/rust_calculator/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/josn_parser/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/async_await/target" />
       <excludeFolder url="file://$MODULE_DIR$/rust_macro/target" />
       <excludeFolder url="file://$MODULE_DIR$/train_thread/target" />
       <excludeFolder url="file://$MODULE_DIR$/rust_calculator/target" />
+      <excludeFolder url="file://$MODULE_DIR$/josn_parser/target" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
