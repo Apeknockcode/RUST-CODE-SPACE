@@ -7,11 +7,18 @@
       <sourceFolder url="file://$MODULE_DIR$/train_thread/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/rust_calculator/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/josn_parser/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/web-start-1/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/linked_database/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/async_await/target" />
       <excludeFolder url="file://$MODULE_DIR$/rust_macro/target" />
       <excludeFolder url="file://$MODULE_DIR$/train_thread/target" />
       <excludeFolder url="file://$MODULE_DIR$/rust_calculator/target" />
       <excludeFolder url="file://$MODULE_DIR$/josn_parser/target" />
+      <excludeFolder url="file://$MODULE_DIR$/web-start-1/target" />
+      <excludeFolder url="file://$MODULE_DIR$/.vscode" />
+      <excludeFolder url="file://$MODULE_DIR$/Exercise Library/rustlings/.idea" />
+      <excludeFolder url="file://$MODULE_DIR$/Exercise Library/rustlings/target" />
+      <excludeFolder url="file://$MODULE_DIR$/linked_database/target" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
